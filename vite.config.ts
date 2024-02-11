@@ -15,6 +15,7 @@ const manifest = defineManifest({
   chrome_url_overrides: {
     newtab: "new-tab.html",
   },
+  options_page: "new-tab.html",
 });
 
 // https://vitejs.dev/config/
