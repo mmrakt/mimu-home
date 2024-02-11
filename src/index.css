@@ -7,3 +7,7 @@
     color-scheme: dark;
   }
 }
+
+.skeleton-animation {
+  @apply bg-gray-600 rounded-2xl animate-pulse;
+}
