@@ -12,9 +12,9 @@ const manifest = defineManifest({
     type: "module",
   },
   permissions: ["storage", "tabs", "notifications"],
-  // chrome_url_overrides: {
-  //   newtab: "new-tab.html",
-  // },
+  chrome_url_overrides: {
+    newtab: "new-tab.html",
+  },
   options_page: "new-tab.html",
 });
 

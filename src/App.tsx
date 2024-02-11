@@ -14,7 +14,6 @@ const App = () => {
           </div>
         </div>
         <div className="mt-5">
-          <h2 className="text-3xl">Inbox</h2>
           <Posts />
         </div>
         <div className="py-5 flex justify-end">
