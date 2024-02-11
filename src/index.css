@@ -8,6 +8,10 @@
   }
 }
 
+.gradient-bg {
+  @apply bg-gradient-to-b from-[#0D0D0E] to-[#2E2B43] bg-fixed;
+}
+
 .skeleton-animation {
-  @apply bg-gray-600 rounded-2xl animate-pulse;
+  @apply bg-gray-600 animate-pulse;
 }

@@ -1,10 +1,19 @@
 import { useEffect, useState } from "react";
-// import { RAINDROP_API_BASE_URL } from "../constants";
+import { RAINDROP_API_BASE_URL } from "../constants";
 import Post from "./Post";
 import { dummyPosts } from "../constants/dummy";
+import SkeletonPost from "./SkeletonPost";
 
 const Posts = () => {
-  const [posts, setPosts] = useState<any[]>([]);
+  return (
+    <ul className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5">
+      <PostsInner />
+    </ul>
+  );
+};
+
+const PostsInner = () => {
+  const [posts, setPosts] = useState<any[] | undefined>();
 
   useEffect(() => {
     // (async () => {
@@ -19,17 +28,16 @@ const Posts = () => {
     //     }
     //   );
     //   const result = await response.json();
-    //   setPosts(result);
+    //   setPosts(result.items);
     // })();
     setPosts(dummyPosts.items);
   }, []);
-  return (
-    <ul className="grid grid-cols-4 gap-5 mt-10">
-      {posts.map((post) => (
-        <Post item={post} key={post._id} />
-      ))}
-    </ul>
-  );
+
+  if (!posts) {
+    return [...new Array(12)].map(() => <SkeletonPost />);
+  } else {
+    return posts.map((post) => <Post item={post} key={post._id} />);
+  }
 };
 
 export default Posts;
